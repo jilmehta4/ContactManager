@@ -1,0 +1,48 @@
+﻿@model Contact
+
+<h2>Contact Details</h2>
+
+<input asp-for="ContactId" hidden />
+<div class="col-sm-8">
+    <table class="table my-4 table-bordered table-striped">
+        <tr>
+            <td>Name:</td>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <td>Phone:</td>
+            <td>@Model.Phone.ToString()</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>
+                @Model.Email.ToString()
+            </td>
+        </tr>
+        <tr>
+            <td>Category</td>
+            <td>
+                @Model.Category.CategoryName
+            </td>
+        </tr>
+        <tr>
+            <td>Organization</td>
+            <td>
+                @Model.Phone.ToString()
+            </td>
+        </tr>
+        <tr>
+            <td>Date added:</td>
+            <td>
+                @Model.DateAdded.ToString()
+            </td>
+        </tr>
+    </table>
+    <a asp-controller="Contact" asp-action="Edit"
+       asp-route-id="@Model.ContactId" class="btn btn-secondary">Edit</a>
+    &nbsp<a asp-controller="Contact" asp-action="Delete"
+            asp-route-id="@Model.ContactId" class="btn btn-secondary">Delete</a>
+    &nbsp<a asp-controller="Home" asp-action="Index"
+            asp-route-id="@Model.ContactId" class="btn btn-secondary">Home</a>
+
+</div>
